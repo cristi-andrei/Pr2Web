@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prețuri și pachete NeoForge Tech. Alege planul perfect pentru nevoile tale: Starter, Professional sau Enterprise.">
+    <title>Prețuri - NeoForge Tech</title>
+    <link rel="stylesheet" href="css/preturistyle.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">NF</div>
+                    <span class="company-name">NeoForge Tech</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="home.html">Acasă</a></li>
+                        <li><a href="servicii.html">Servicii</a></li>
+                        <li><a href="preturi.html" class="active">Prețuri</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Title Section -->
+    <section class="page-title">
+        <div class="container">
+            <h1>Pachete și Prețuri</h1>
+            <p>Alege planul care se potrivește perfect nevoilor tale</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Price Calculator Section -->
+        <section class="section calculator-section">
+            <h2>Calculator de Preț Personalizat</h2>
+            <p class="calculator-description">Calculează costul exact pentru nevoile tale specifice</p>
+
+            <div class="calculator-form">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="package-select">Selectează Pachetul:</label>
+                        <select id="package-select">
+                            <option value="starter">Starter - €999/lună</option>
+                            <option value="professional" selected>Professional - €2,499/lună</option>
+                            <option value="enterprise">Enterprise - €4,999/lună</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="billing-select">Perioada de Facturare:</label>
+                        <select id="billing-select">
+                            <option value="monthly" selected>Lunar</option>
+                            <option value="quarterly">Trimestrial (5% discount)</option>
+                            <option value="annual">Anual (15% discount)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="extra-hours">Ore Suplimentare Estimate:</label>
+                        <input type="number" id="extra-hours" min="0" value="0" placeholder="0">
+                        <small>Aplică doar pentru Starter și Professional (€100/oră)</small>
+                    </div>
+                </div>
+
+                <div class="additional-services-section">
+                    <h4>Servicii Suplimentare (opțional):</h4>
+                    <div class="services-grid">
+                        <div class="service-field">
+                            <label for="maintenance-qty">Mentenanță (€299/lună):</label>
+                            <input type="number" id="maintenance-qty" min="0" value="0">
+                        </div>
+                        <div class="service-field">
+                            <label for="training-qty">Ore Training (€150/oră):</label>
+                            <input type="number" id="training-qty" min="0" value="0">
+                        </div>
+                        <div class="service-field">
+                            <label for="urgent-qty">Ore Urgente (€200/oră):</label>
+                            <input type="number" id="urgent-qty" min="0" value="0">
+                        </div>
+                        <div class="service-field">
+                            <label for="audit-qty">Audituri (€999/audit):</label>
+                            <input type="number" id="audit-qty" min="0" value="0">
+                        </div>
+                    </div>
+                </div>
+
+                <button id="calculate-btn" class="calculate-button">Calculează Prețul</button>
+            </div>
+
+            <div id="result-display" class="result-display"></div>
+        </section>
+
+        <!-- Savings Calculator Section -->
+        <section class="section savings-section">
+            <h2>Calculează Economiile cu Plata Anuală</h2>
+            <div class="savings-calculator">
+                <div class="form-field">
+                    <label for="savings-package">Selectează Pachetul:</label>
+                    <select id="savings-package">
+                        <option value="starter">Starter</option>
+                        <option value="professional" selected>Professional</option>
+                        <option value="enterprise">Enterprise</option>
+                    </select>
+                </div>
+                <button id="calculate-savings-btn" class="calculate-button">Calculează Economiile</button>
+                <div id="savings-display" class="savings-display"></div>
+            </div>
+        </section>
+
+        <!-- Pricing Cards Section (Dynamically Generated) -->
+        <section id="pricing-cards-container" class="pricing-section">
+            <!-- Pricing cards will be dynamically inserted here by pricing-cards.js -->
+        </section>
+
+        <!-- Comparison Table Section -->
+        <section class="section comparison-section">
+            <h2>Comparație Detaliată Pachete</h2>
+            <div class="table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Caracteristici</th>
+                            <th>Starter</th>
+                            <th>Professional</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ore dezvoltare/lună</td>
+                            <td>Până la 40</td>
+                            <td>Până la 100</td>
+                            <td>Nelimitate</td>
+                        </tr>
+                        <tr>
+                            <td>Timp răspuns suport</td>
+                            <td>48 ore</td>
+                            <td>24 ore</td>
+                            <td>Timp real (24/7)</td>
+                        </tr>
+                        <tr>
+                            <td>Revizii incluse</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>Nelimitate</td>
+                        </tr>
+                        <tr>
+                            <td>Soluții AI/ML</td>
+                            <td>❌</td>
+                            <td>De bază</td>
+                            <td>Avansate</td>
+                        </tr>
+                        <tr>
+                            <td>Game Development</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td>✅ Complet</td>
+                        </tr>
+                        <tr>
+                            <td>Manager dedicat</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td>✅ 24/7</td>
+                        </tr>
+                        <tr>
+                            <td>Training echipă</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td>✅ Inclus</td>
+                        </tr>
+                        <tr>
+                            <td>SLA garantat</td>
+                            <td>❌</td>
+                            <td>95%</td>
+                            <td>99.9%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Additional Services Section -->
+        <section class="section additional-services">
+            <h2>Servicii Suplimentare</h2>
+            <div class="additional-grid">
+                <div class="additional-card">
+                    <h3>🔧 Mentenanță Lunară</h3>
+                    <p class="additional-price">De la <strong>€299/lună</strong></p>
+                    <p>Update-uri regulate, monitorizare și optimizări pentru aplicațiile tale existente.</p>
+                </div>
+                <div class="additional-card">
+                    <h3>🎓 Training Personalizat</h3>
+                    <p class="additional-price"><strong>€150/oră</strong></p>
+                    <p>Sesiuni de training pentru echipa ta pe tehnologiile și best practices moderne.</p>
+                </div>
+                <div class="additional-card">
+                    <h3>⚡ Dezvoltare Urgentă</h3>
+                    <p class="additional-price"><strong>€200/oră</strong></p>
+                    <p>Suport urgent pentru deadline-uri strânse sau probleme critice de producție.</p>
+                </div>
+                <div class="additional-card">
+                    <h3>🔍 Audit Tehnic</h3>
+                    <p class="additional-price"><strong>€999/proiect</strong></p>
+                    <p>Analiză completă a infrastructurii și codului cu recomandări detaliate.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section faq-section">
+            <h2>Întrebări Frecvente</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Pot schimba pachetul în timpul contractului?</h3>
+                    <p>Da, poți face upgrade sau downgrade oricând. Diferența de preț va fi calculată pro-rata pentru luna curentă.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Există costuri ascunse?</h3>
+                    <p>Nu. Toate costurile sunt transparente și incluse în pachet, cu excepția serviciilor suplimentare opționale.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Ce se întâmplă dacă depășesc orele incluse?</h3>
+                    <p>Orele suplimentare se taxează la rata de €100/oră pentru Starter și Professional. Enterprise are ore nelimitate.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Oferiți reduceri pentru contracte anuale?</h3>
+                    <p>Da! Plata anuală anticipată beneficiază de 15% reducere pentru toate pachetele.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Pot anula contractul?</h3>
+                    <p>Da, cu un preaviz de 30 de zile. Oferim garanție de returnare a banilor în primele 14 zile.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Cum se face facturarea?</h3>
+                    <p>Facturarea se face lunar, la început de lună. Acceptăm transfer bancar, card și PayPal.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section cta-banner">
+            <h2>Nu Ești Sigur Ce Pachet să Alegi?</h2>
+            <p>Programează o consultație gratuită de 30 de minute și te ajutăm să găsești soluția perfectă pentru tine!</p>
+            <a href="contact.html" class="cta-button-large">Programează Consultația Gratuită</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NeoForge Tech</h3>
+                    <p>
+                        Companie inovatoare de tehnologie specializată în dezvoltarea de soluții AI 
+                        și jocuri video imersive.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link-uri Rapide</h3>
+                    <a href="home.html">Acasă</a>
+                    <a href="servicii.html">Servicii</a>
+                    <a href="preturi.html">Prețuri</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <div class="contact-info">
+                        <span class="contact-icon">📍</span>
+                        <p>Str. Trandafirilor, nr. 10<br>Târgu Mureș, România</p>
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-icon">📧</span>
+                        <p>contact@neoforgetech.ro</p>
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-icon">📞</span>
+                        <p>+40 773 111 222</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NeoForge Tech. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript Files -->
+    <script src="javascript/pricing-cards.js"></script>
+    <script src="javascript/pricing-calculator.js"></script>
+    <script>
+        // Initialize calculator when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const calculateBtn = document.getElementById('calculate-btn');
+            const calculateSavingsBtn = document.getElementById('calculate-savings-btn');
+
+            // Main calculator
+            calculateBtn.addEventListener('click', function() {
+                const packageType = document.getElementById('package-select').value;
+                const billingPeriod = document.getElementById('billing-select').value;
+                const extraHours = parseInt(document.getElementById('extra-hours').value) || 0;
+
+                const additionalServices = {
+                    maintenance: parseInt(document.getElementById('maintenance-qty').value) || 0,
+                    training: parseInt(document.getElementById('training-qty').value) || 0,
+                    urgentDev: parseInt(document.getElementById('urgent-qty').value) || 0,
+                    audit: parseInt(document.getElementById('audit-qty').value) || 0
+                };
+
+                const result = calculatePriceWithServices(packageType, billingPeriod, extraHours, additionalServices);
+                const formattedResult = formatPriceDisplay(result);
+
+                document.getElementById('result-display').innerHTML = formattedResult;
+                document.getElementById('result-display').style.display = 'block';
+            });
+
+            // Savings calculator
+            calculateSavingsBtn.addEventListener('click', function() {
+                const packageType = document.getElementById('savings-package').value;
+                const savings = calculateAnnualSavings(packageType);
+
+                if (savings.error) {
+                    document.getElementById('savings-display').innerHTML = `<div class="price-error">${savings.error}</div>`;
+                } else {
+                    let html = '<div class="savings-breakdown">';
+                    html += `<h4>Economii pentru pachetul ${savings.packageType.toUpperCase()}</h4>`;
+                    html += `<div class="savings-item"><span>Plată lunară:</span><span>€${savings.monthlyPayment}/lună</span></div>`;
+                    html += `<div class="savings-item"><span>Cost total pe 12 luni (lunar):</span><span>€${savings.monthlyYearlyCost.toFixed(2)}</span></div>`;
+                    html += `<div class="savings-item"><span>Plată anuală (cu 15% discount):</span><span>€${savings.annualPayment.toFixed(2)}</span></div>`;
+                    html += `<div class="savings-item highlight"><span>ECONOMISEȘTI:</span><span>€${savings.savings.toFixed(2)} (${savings.savingsPercent}%)</span></div>`;
+                    html += '</div>';
+                    document.getElementById('savings-display').innerHTML = html;
+                }
+
+                document.getElementById('savings-display').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
